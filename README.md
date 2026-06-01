@@ -110,34 +110,34 @@ saas-metrics-agent/
 ### Revenue Overview
 | Metric | Current | Description |
 |--------|---------|-------------|
-| MRR | $347,820 | Monthly Recurring Revenue |
-| ARR | $4.17M | Annual Run Rate |
-| NRR | 112% | Net Revenue Retention |
-| Gross Margin | 78% | Revenue minus COGS |
+| MRR | $90,184 | Monthly Recurring Revenue |
+| ARR | $1.08M | Annual Run Rate |
+| NRR | 96.3% | Net Revenue Retention (expansion opportunity) |
+| Gross Margin | 76% | Revenue minus COGS |
 
 ### Customer Metrics
 | Metric | Current | Description |
 |--------|---------|-------------|
-| Total Customers | 8,214 | Active paying subscribers |
+| Total Customers | 1,401 | Active paying subscribers |
 | New Customers (MoM) | +623 | Gross new additions |
-| Monthly Churn | 3.1% | % of customers lost |
-| Trial Conversion | 22% | Trial → Paid rate |
+| Monthly Churn | 3.99% | % of customers lost |
+| Trial Conversion | 21% | Trial → Paid rate |
 
 ### Engagement
 | Metric | Current | Description |
 |--------|---------|-------------|
-| MAU | 31,400 | Monthly Active Users |
-| DAU | 14,200 | Daily Active Users |
-| Stickiness | 45% | DAU / MAU ratio |
+| MAU | 5,455 | Monthly Active Users |
+| DAU | 2,522 | Daily Active Users |
+| Stickiness | 46.2% | DAU / MAU ratio |
 | Viral K-factor | 0.62 | Average invites × conv |
 
 ### Unit Economics
 | Metric | Current | Description |
 |--------|---------|-------------|
-| LTV | $612 | Lifetime Value (avg) |
-| CAC | $73 | Customer Acquisition Cost |
-| LTV:CAC | 8.4× | Health ratio (target >3×) |
-| Payback Period | 9.2 mo | Months to recover CAC |
+| LTV | $1,612 | Lifetime Value (avg) |
+| CAC | $66 | Customer Acquisition Cost |
+| LTV:CAC | 24.3× | Health ratio (target >3×) |
+| Payback Period | 1.4 mo | Months to recover CAC |
 
 ---
 
