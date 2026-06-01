@@ -1,0 +1,64 @@
+/*
+ * FlowSync Dashboard — Supplemental Stylesheet
+ * Primary styles are in dashboard/index.html for self-containment.
+ * This file provides additional utilities and print overrides.
+ */
+
+/* ── UTILITY CLASSES ── */
+.text-cyan   { color: #00D4FF !important; }
+.text-purple { color: #A855F7 !important; }
+.text-green  { color: #00FF94 !important; }
+.text-amber  { color: #F59E0B !important; }
+.text-red    { color: #FF4757 !important; }
+.text-muted  { color: #8B949E !important; }
+
+.bg-cyan-dim   { background: rgba(0,212,255,0.1) !important; }
+.bg-purple-dim { background: rgba(168,85,247,0.1) !important; }
+.bg-green-dim  { background: rgba(0,255,148,0.1) !important; }
+.bg-amber-dim  { background: rgba(245,158,11,0.1)  !important; }
+
+/* ── TYPOGRAPHY ── */
+.font-mono { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; }
+.font-bold { font-weight: 700; }
+.font-xl   { font-size: 20px; }
+
+/* ── ANIMATION HELPERS ── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.shimmer-loading {
+  background: linear-gradient(90deg, #161B22 25%, #1C2128 50%, #161B22 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* ── SCROLLBAR ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #30363D #0D1117;
+}
+
+/* ── SELECTION ── */
+::selection {
+  background: rgba(0, 212, 255, 0.25);
+  color: #E6EDF3;
+}
+
+/* ── FOCUS STYLES (a11y) ── */
+:focus-visible {
+  outline: 2px solid #00D4FF;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── PRINT OVERRIDES ── */
+@media print {
+  .header, .nav { display: none !important; }
+  .main { padding: 0 !important; }
+  .tab-panel { display: block !important; page-break-after: always; }
+  body { background: #fff; color: #111; }
+  .kpi-card, .chart-card { background: #fff !important; border: 1px solid #ddd !important; }
+}
