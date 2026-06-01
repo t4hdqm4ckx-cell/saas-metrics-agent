@@ -528,6 +528,28 @@
   .stat-val.amber  { color: var(--amber); }
   .stat-val.purple { color: var(--purple); }
 
+  /* ── TOOLTIP ANNOTATION ── */
+  .chart-annotation {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 10px;
+    color: var(--muted);
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  /* ── NUMBER COUNTER ANIMATION ── */
+  @keyframes countUp {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .kpi-value { animation: countUp 0.5s ease both; }
+
   /* ── SCROLLBAR ── */
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
