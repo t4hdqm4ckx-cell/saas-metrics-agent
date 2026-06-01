@@ -145,3 +145,25 @@ This project follows [Semantic Versioning 2.0.0](https://semver.org/):
 ---
 
 *Last updated: 2026-06-01 | Maintained by: Engineering Lead*
+
+---
+
+### [1.0.1] — 2026-06-01 (Patch)
+
+**Type**: Patch
+
+#### Added
+- `agent/config.py` — Centralized env-var config with validation
+- `agent/schema.py` — JSON schema validator (runnable as CLI)
+- `agent/forecaster.py` — Monte Carlo MRR + OLS churn forecasting
+- `agent/alerter.py` — 14-rule metric threshold alert engine
+- `agent/reporter.py` — Template-based narrative report generator
+- `agent/tests/test_alerter.py` — 7 alerter tests
+- `docs/architecture.md` — System diagram and data flow documentation
+- `CONTRIBUTING.md` — Development setup and contribution guidelines
+- `LICENSE` — MIT
+- `Makefile` — Common workflow targets
+- `.github/` — Issue and PR templates
+
+#### Fixed
+- README metrics updated to match actual seed=42 generated data
