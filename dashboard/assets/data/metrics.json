@@ -1,0 +1,1047 @@
+{
+  "generated_at": "2026-06-01T20:22:42.995828Z",
+  "schema_version": "1.0",
+  "company": "FlowSync",
+  "seed": 42,
+  "months_generated": 24,
+  "start_month": "2024-06",
+  "plan_prices": {
+    "starter": 12.0,
+    "pro": 29.0,
+    "business": 79.0
+  },
+  "months": [
+    {
+      "month": "2024-06",
+      "mrr": 19569.52,
+      "arr": 234834.3,
+      "new_mrr": 724.81,
+      "expansion_mrr": 175.0,
+      "contraction_mrr": 34.0,
+      "churned_mrr": 1122.57,
+      "nrr": 94.69,
+      "total_customers": 402,
+      "new_customers": 15,
+      "churned_customers": 25,
+      "trial_starts": 49,
+      "trial_conversions": 7,
+      "trial_conversion_rate": 0.1474,
+      "mau": 1534,
+      "dau": 585,
+      "stickiness": 0.382,
+      "viral_k": 0.341,
+      "ltv": 845.62,
+      "cac": 66.98,
+      "ltv_cac_ratio": 12.62,
+      "payback_months": 2.12,
+      "gross_margin": 0.65,
+      "burn_rate": 4566.47,
+      "runway_months": 524.6,
+      "arpu": 48.68,
+      "monthly_churn_rate": 0.0576,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 261,
+          "mrr": 3132.0
+        },
+        "pro": {
+          "customers": 112,
+          "mrr": 3248.0
+        },
+        "business": {
+          "customers": 29,
+          "mrr": 2291.0
+        }
+      }
+    },
+    {
+      "month": "2024-07",
+      "mrr": 20752.31,
+      "arr": 249027.68,
+      "new_mrr": 728.28,
+      "expansion_mrr": 150.0,
+      "contraction_mrr": 34.0,
+      "churned_mrr": 1022.29,
+      "nrr": 95.37,
+      "total_customers": 395,
+      "new_customers": 14,
+      "churned_customers": 21,
+      "trial_starts": 65,
+      "trial_conversions": 9,
+      "trial_conversion_rate": 0.1439,
+      "mau": 1578,
+      "dau": 632,
+      "stickiness": 0.401,
+      "viral_k": 0.295,
+      "ltv": 999.01,
+      "cac": 68.34,
+      "ltv_cac_ratio": 14.62,
+      "payback_months": 1.97,
+      "gross_margin": 0.66,
+      "burn_rate": 4632.97,
+      "runway_months": 516.0,
+      "arpu": 52.54,
+      "monthly_churn_rate": 0.0526,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 253,
+          "mrr": 3036.0
+        },
+        "pro": {
+          "customers": 112,
+          "mrr": 3248.0
+        },
+        "business": {
+          "customers": 30,
+          "mrr": 2370.0
+        }
+      }
+    },
+    {
+      "month": "2024-08",
+      "mrr": 21909.68,
+      "arr": 262916.13,
+      "new_mrr": 1158.45,
+      "expansion_mrr": 150.0,
+      "contraction_mrr": 34.0,
+      "churned_mrr": 1103.29,
+      "nrr": 95.24,
+      "total_customers": 395,
+      "new_customers": 21,
+      "churned_customers": 21,
+      "trial_starts": 80,
+      "trial_conversions": 14,
+      "trial_conversion_rate": 0.1852,
+      "mau": 1313,
+      "dau": 490,
+      "stickiness": 0.374,
+      "viral_k": 0.377,
+      "ltv": 1014.89,
+      "cac": 71.36,
+      "ltv_cac_ratio": 14.22,
+      "payback_months": 1.89,
+      "gross_margin": 0.68,
+      "burn_rate": 4473.15,
+      "runway_months": 533.5,
+      "arpu": 55.47,
+      "monthly_churn_rate": 0.0547,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 251,
+          "mrr": 3012.0
+        },
+        "pro": {
+          "customers": 113,
+          "mrr": 3277.0
+        },
+        "business": {
+          "customers": 31,
+          "mrr": 2449.0
+        }
+      }
+    },
+    {
+      "month": "2024-09",
+      "mrr": 23160.02,
+      "arr": 277920.22,
+      "new_mrr": 1699.89,
+      "expansion_mrr": 175.0,
+      "contraction_mrr": 34.0,
+      "churned_mrr": 1053.88,
+      "nrr": 95.83,
+      "total_customers": 406,
+      "new_customers": 30,
+      "churned_customers": 19,
+      "trial_starts": 115,
+      "trial_conversions": 17,
+      "trial_conversion_rate": 0.1559,
+      "mau": 1738,
+      "dau": 669,
+      "stickiness": 0.385,
+      "viral_k": 0.336,
+      "ltv": 1232.91,
+      "cac": 85.99,
+      "ltv_cac_ratio": 14.34,
+      "payback_months": 2.24,
+      "gross_margin": 0.67,
+      "burn_rate": 4900.82,
+      "runway_months": 485.9,
+      "arpu": 57.04,
+      "monthly_churn_rate": 0.0463,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 255,
+          "mrr": 3060.0
+        },
+        "pro": {
+          "customers": 118,
+          "mrr": 3422.0
+        },
+        "business": {
+          "customers": 33,
+          "mrr": 2607.0
+        }
+      }
+    },
+    {
+      "month": "2024-10",
+      "mrr": 24975.16,
+      "arr": 299701.96,
+      "new_mrr": 2732.99,
+      "expansion_mrr": 200.0,
+      "contraction_mrr": 34.0,
+      "churned_mrr": 1083.84,
+      "nrr": 96.04,
+      "total_customers": 436,
+      "new_customers": 49,
+      "churned_customers": 19,
+      "trial_starts": 133,
+      "trial_conversions": 23,
+      "trial_conversion_rate": 0.1804,
+      "mau": 1357,
+      "dau": 506,
+      "stickiness": 0.373,
+      "viral_k": 0.378,
+      "ltv": 1207.68,
+      "cac": 67.34,
+      "ltv_cac_ratio": 17.93,
+      "payback_months": 1.69,
+      "gross_margin": 0.7,
+      "burn_rate": 4732.82,
+      "runway_months": 502.2,
+      "arpu": 57.28,
+      "monthly_churn_rate": 0.0474,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 270,
+          "mrr": 3240.0
+        },
+        "pro": {
+          "customers": 128,
+          "mrr": 3712.0
+        },
+        "business": {
+          "customers": 38,
+          "mrr": 3002.0
+        }
+      }
+    },
+    {
+      "month": "2024-11",
+      "mrr": 26638.65,
+      "arr": 319663.76,
+      "new_mrr": 2030.61,
+      "expansion_mrr": 225.0,
+      "contraction_mrr": 34.0,
+      "churned_mrr": 1088.37,
+      "nrr": 96.41,
+      "total_customers": 452,
+      "new_customers": 35,
+      "churned_customers": 19,
+      "trial_starts": 161,
+      "trial_conversions": 28,
+      "trial_conversion_rate": 0.1759,
+      "mau": 1607,
+      "dau": 640,
+      "stickiness": 0.398,
+      "viral_k": 0.388,
+      "ltv": 1283.91,
+      "cac": 68.03,
+      "ltv_cac_ratio": 18.87,
+      "payback_months": 1.62,
+      "gross_margin": 0.71,
+      "burn_rate": 4623.3,
+      "runway_months": 513.1,
+      "arpu": 58.94,
+      "monthly_churn_rate": 0.0459,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 277,
+          "mrr": 3324.0
+        },
+        "pro": {
+          "customers": 135,
+          "mrr": 3915.0
+        },
+        "business": {
+          "customers": 40,
+          "mrr": 3160.0
+        }
+      }
+    },
+    {
+      "month": "2024-12",
+      "mrr": 28779.64,
+      "arr": 345355.69,
+      "new_mrr": 3280.5,
+      "expansion_mrr": 250.0,
+      "contraction_mrr": 34.0,
+      "churned_mrr": 1355.51,
+      "nrr": 95.72,
+      "total_customers": 486,
+      "new_customers": 57,
+      "churned_customers": 23,
+      "trial_starts": 177,
+      "trial_conversions": 37,
+      "trial_conversion_rate": 0.2115,
+      "mau": 1702,
+      "dau": 720,
+      "stickiness": 0.423,
+      "viral_k": 0.405,
+      "ltv": 1221.57,
+      "cac": 76.17,
+      "ltv_cac_ratio": 16.04,
+      "payback_months": 1.8,
+      "gross_margin": 0.71,
+      "burn_rate": 4952.01,
+      "runway_months": 478.0,
+      "arpu": 59.22,
+      "monthly_churn_rate": 0.0485,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 294,
+          "mrr": 3528.0
+        },
+        "pro": {
+          "customers": 147,
+          "mrr": 4263.0
+        },
+        "business": {
+          "customers": 45,
+          "mrr": 3555.0
+        }
+      }
+    },
+    {
+      "month": "2025-01",
+      "mrr": 30381.23,
+      "arr": 364574.71,
+      "new_mrr": 2463.15,
+      "expansion_mrr": 225.0,
+      "contraction_mrr": 51.0,
+      "churned_mrr": 1421.22,
+      "nrr": 95.67,
+      "total_customers": 503,
+      "new_customers": 41,
+      "churned_customers": 24,
+      "trial_starts": 212,
+      "trial_conversions": 34,
+      "trial_conversion_rate": 0.1642,
+      "mau": 2026,
+      "dau": 832,
+      "stickiness": 0.411,
+      "viral_k": 0.422,
+      "ltv": 1332.73,
+      "cac": 80.41,
+      "ltv_cac_ratio": 16.57,
+      "payback_months": 1.88,
+      "gross_margin": 0.71,
+      "burn_rate": 5364.22,
+      "runway_months": 440.3,
+      "arpu": 60.4,
+      "monthly_churn_rate": 0.0453,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 301,
+          "mrr": 3612.0
+        },
+        "pro": {
+          "customers": 154,
+          "mrr": 4466.0
+        },
+        "business": {
+          "customers": 48,
+          "mrr": 3792.0
+        }
+      }
+    },
+    {
+      "month": "2025-02",
+      "mrr": 31730.58,
+      "arr": 380766.96,
+      "new_mrr": 2383.35,
+      "expansion_mrr": 225.0,
+      "contraction_mrr": 51.0,
+      "churned_mrr": 1208.0,
+      "nrr": 96.6,
+      "total_customers": 522,
+      "new_customers": 39,
+      "churned_customers": 20,
+      "trial_starts": 175,
+      "trial_conversions": 30,
+      "trial_conversion_rate": 0.1747,
+      "mau": 1929,
+      "dau": 772,
+      "stickiness": 0.4,
+      "viral_k": 0.43,
+      "ltv": 1457.31,
+      "cac": 79.23,
+      "ltv_cac_ratio": 18.39,
+      "payback_months": 1.83,
+      "gross_margin": 0.71,
+      "burn_rate": 5442.68,
+      "runway_months": 432.9,
+      "arpu": 60.79,
+      "monthly_churn_rate": 0.0417,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 309,
+          "mrr": 3708.0
+        },
+        "pro": {
+          "customers": 162,
+          "mrr": 4698.0
+        },
+        "business": {
+          "customers": 51,
+          "mrr": 4029.0
+        }
+      }
+    },
+    {
+      "month": "2025-03",
+      "mrr": 33729.13,
+      "arr": 404749.51,
+      "new_mrr": 3380.0,
+      "expansion_mrr": 250.0,
+      "contraction_mrr": 51.0,
+      "churned_mrr": 1580.45,
+      "nrr": 95.65,
+      "total_customers": 552,
+      "new_customers": 56,
+      "churned_customers": 26,
+      "trial_starts": 225,
+      "trial_conversions": 44,
+      "trial_conversion_rate": 0.1963,
+      "mau": 2106,
+      "dau": 893,
+      "stickiness": 0.424,
+      "viral_k": 0.482,
+      "ltv": 1344.11,
+      "cac": 85.25,
+      "ltv_cac_ratio": 15.77,
+      "payback_months": 1.97,
+      "gross_margin": 0.71,
+      "burn_rate": 5979.09,
+      "runway_months": 393.1,
+      "arpu": 61.1,
+      "monthly_churn_rate": 0.0455,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 322,
+          "mrr": 3864.0
+        },
+        "pro": {
+          "customers": 173,
+          "mrr": 5017.0
+        },
+        "business": {
+          "customers": 57,
+          "mrr": 4503.0
+        }
+      }
+    },
+    {
+      "month": "2025-04",
+      "mrr": 36942.91,
+      "arr": 443314.89,
+      "new_mrr": 4456.27,
+      "expansion_mrr": 275.0,
+      "contraction_mrr": 51.0,
+      "churned_mrr": 1466.48,
+      "nrr": 96.32,
+      "total_customers": 604,
+      "new_customers": 76,
+      "churned_customers": 24,
+      "trial_starts": 271,
+      "trial_conversions": 50,
+      "trial_conversion_rate": 0.1881,
+      "mau": 2291,
+      "dau": 952,
+      "stickiness": 0.416,
+      "viral_k": 0.484,
+      "ltv": 1529.79,
+      "cac": 86.36,
+      "ltv_cac_ratio": 17.71,
+      "payback_months": 1.94,
+      "gross_margin": 0.73,
+      "burn_rate": 5822.26,
+      "runway_months": 402.7,
+      "arpu": 61.16,
+      "monthly_churn_rate": 0.04,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 348,
+          "mrr": 4176.0
+        },
+        "pro": {
+          "customers": 192,
+          "mrr": 5568.0
+        },
+        "business": {
+          "customers": 64,
+          "mrr": 5056.0
+        }
+      }
+    },
+    {
+      "month": "2025-05",
+      "mrr": 39002.94,
+      "arr": 468035.27,
+      "new_mrr": 3548.62,
+      "expansion_mrr": 275.0,
+      "contraction_mrr": 51.0,
+      "churned_mrr": 1712.59,
+      "nrr": 95.97,
+      "total_customers": 634,
+      "new_customers": 58,
+      "churned_customers": 28,
+      "trial_starts": 275,
+      "trial_conversions": 49,
+      "trial_conversion_rate": 0.1798,
+      "mau": 2546,
+      "dau": 1046,
+      "stickiness": 0.411,
+      "viral_k": 0.503,
+      "ltv": 1454.51,
+      "cac": 79.79,
+      "ltv_cac_ratio": 18.23,
+      "payback_months": 1.72,
+      "gross_margin": 0.75,
+      "burn_rate": 5286.51,
+      "runway_months": 442.5,
+      "arpu": 61.52,
+      "monthly_churn_rate": 0.0423,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 361,
+          "mrr": 4332.0
+        },
+        "pro": {
+          "customers": 204,
+          "mrr": 5916.0
+        },
+        "business": {
+          "customers": 69,
+          "mrr": 5451.0
+        }
+      }
+    },
+    {
+      "month": "2025-06",
+      "mrr": 41509.01,
+      "arr": 498108.16,
+      "new_mrr": 4083.12,
+      "expansion_mrr": 275.0,
+      "contraction_mrr": 68.0,
+      "churned_mrr": 1784.05,
+      "nrr": 95.96,
+      "total_customers": 672,
+      "new_customers": 67,
+      "churned_customers": 29,
+      "trial_starts": 285,
+      "trial_conversions": 54,
+      "trial_conversion_rate": 0.1902,
+      "mau": 2485,
+      "dau": 1077,
+      "stickiness": 0.434,
+      "viral_k": 0.483,
+      "ltv": 1475.2,
+      "cac": 71.2,
+      "ltv_cac_ratio": 20.72,
+      "payback_months": 1.58,
+      "gross_margin": 0.73,
+      "burn_rate": 6492.93,
+      "runway_months": 359.3,
+      "arpu": 61.77,
+      "monthly_churn_rate": 0.0419,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 378,
+          "mrr": 4536.0
+        },
+        "pro": {
+          "customers": 219,
+          "mrr": 6351.0
+        },
+        "business": {
+          "customers": 75,
+          "mrr": 5925.0
+        }
+      }
+    },
+    {
+      "month": "2025-07",
+      "mrr": 43529.62,
+      "arr": 522355.42,
+      "new_mrr": 3419.61,
+      "expansion_mrr": 275.0,
+      "contraction_mrr": 68.0,
+      "churned_mrr": 1606.0,
+      "nrr": 96.63,
+      "total_customers": 701,
+      "new_customers": 55,
+      "churned_customers": 26,
+      "trial_starts": 261,
+      "trial_conversions": 48,
+      "trial_conversion_rate": 0.1856,
+      "mau": 2248,
+      "dau": 918,
+      "stickiness": 0.408,
+      "viral_k": 0.51,
+      "ltv": 1477.25,
+      "cac": 87.16,
+      "ltv_cac_ratio": 16.95,
+      "payback_months": 1.89,
+      "gross_margin": 0.74,
+      "burn_rate": 6208.25,
+      "runway_months": 374.7,
+      "arpu": 62.1,
+      "monthly_churn_rate": 0.042,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 389,
+          "mrr": 4668.0
+        },
+        "pro": {
+          "customers": 231,
+          "mrr": 6699.0
+        },
+        "business": {
+          "customers": 81,
+          "mrr": 6399.0
+        }
+      }
+    },
+    {
+      "month": "2025-08",
+      "mrr": 46965.14,
+      "arr": 563581.69,
+      "new_mrr": 4843.03,
+      "expansion_mrr": 275.0,
+      "contraction_mrr": 68.0,
+      "churned_mrr": 1614.51,
+      "nrr": 96.77,
+      "total_customers": 755,
+      "new_customers": 80,
+      "churned_customers": 26,
+      "trial_starts": 287,
+      "trial_conversions": 55,
+      "trial_conversion_rate": 0.1927,
+      "mau": 2811,
+      "dau": 1249,
+      "stickiness": 0.445,
+      "viral_k": 0.552,
+      "ltv": 1579.23,
+      "cac": 72.21,
+      "ltv_cac_ratio": 21.87,
+      "payback_months": 1.55,
+      "gross_margin": 0.75,
+      "burn_rate": 6509.55,
+      "runway_months": 356.4,
+      "arpu": 62.21,
+      "monthly_churn_rate": 0.0394,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 414,
+          "mrr": 4968.0
+        },
+        "pro": {
+          "customers": 252,
+          "mrr": 7308.0
+        },
+        "business": {
+          "customers": 89,
+          "mrr": 7031.0
+        }
+      }
+    },
+    {
+      "month": "2025-09",
+      "mrr": 51216.34,
+      "arr": 614596.11,
+      "new_mrr": 6059.19,
+      "expansion_mrr": 375.0,
+      "contraction_mrr": 68.0,
+      "churned_mrr": 2114.99,
+      "nrr": 96.15,
+      "total_customers": 822,
+      "new_customers": 101,
+      "churned_customers": 34,
+      "trial_starts": 349,
+      "trial_conversions": 73,
+      "trial_conversion_rate": 0.2112,
+      "mau": 2643,
+      "dau": 1150,
+      "stickiness": 0.435,
+      "viral_k": 0.539,
+      "ltv": 1495.98,
+      "cac": 85.85,
+      "ltv_cac_ratio": 17.43,
+      "payback_months": 1.85,
+      "gross_margin": 0.75,
+      "burn_rate": 7238.04,
+      "runway_months": 319.5,
+      "arpu": 62.31,
+      "monthly_churn_rate": 0.0416,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 445,
+          "mrr": 5340.0
+        },
+        "pro": {
+          "customers": 278,
+          "mrr": 8062.0
+        },
+        "business": {
+          "customers": 99,
+          "mrr": 7821.0
+        }
+      }
+    },
+    {
+      "month": "2025-10",
+      "mrr": 55771.52,
+      "arr": 669258.22,
+      "new_mrr": 6022.08,
+      "expansion_mrr": 425.0,
+      "contraction_mrr": 85.0,
+      "churned_mrr": 1806.9,
+      "nrr": 97.14,
+      "total_customers": 893,
+      "new_customers": 100,
+      "churned_customers": 29,
+      "trial_starts": 375,
+      "trial_conversions": 78,
+      "trial_conversion_rate": 0.2103,
+      "mau": 3529,
+      "dau": 1485,
+      "stickiness": 0.421,
+      "viral_k": 0.532,
+      "ltv": 1669.29,
+      "cac": 79.56,
+      "ltv_cac_ratio": 20.98,
+      "payback_months": 1.71,
+      "gross_margin": 0.75,
+      "burn_rate": 7890.52,
+      "runway_months": 292.1,
+      "arpu": 62.45,
+      "monthly_churn_rate": 0.0374,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 477,
+          "mrr": 5724.0
+        },
+        "pro": {
+          "customers": 305,
+          "mrr": 8845.0
+        },
+        "business": {
+          "customers": 111,
+          "mrr": 8769.0
+        }
+      }
+    },
+    {
+      "month": "2025-11",
+      "mrr": 60421.63,
+      "arr": 725059.61,
+      "new_mrr": 6196.19,
+      "expansion_mrr": 475.0,
+      "contraction_mrr": 85.0,
+      "churned_mrr": 1936.08,
+      "nrr": 97.23,
+      "total_customers": 964,
+      "new_customers": 102,
+      "churned_customers": 31,
+      "trial_starts": 405,
+      "trial_conversions": 81,
+      "trial_conversion_rate": 0.2014,
+      "mau": 3870,
+      "dau": 1672,
+      "stickiness": 0.432,
+      "viral_k": 0.557,
+      "ltv": 1724.49,
+      "cac": 71.71,
+      "ltv_cac_ratio": 24.05,
+      "payback_months": 1.49,
+      "gross_margin": 0.77,
+      "burn_rate": 7308.8,
+      "runway_months": 314.4,
+      "arpu": 62.68,
+      "monthly_churn_rate": 0.0363,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 508,
+          "mrr": 6096.0
+        },
+        "pro": {
+          "customers": 333,
+          "mrr": 9657.0
+        },
+        "business": {
+          "customers": 123,
+          "mrr": 9717.0
+        }
+      }
+    },
+    {
+      "month": "2025-12",
+      "mrr": 65140.13,
+      "arr": 781681.59,
+      "new_mrr": 6865.3,
+      "expansion_mrr": 525.0,
+      "contraction_mrr": 102.0,
+      "churned_mrr": 2569.8,
+      "nrr": 96.45,
+      "total_customers": 1035,
+      "new_customers": 112,
+      "churned_customers": 41,
+      "trial_starts": 456,
+      "trial_conversions": 87,
+      "trial_conversion_rate": 0.1917,
+      "mau": 3395,
+      "dau": 1644,
+      "stickiness": 0.484,
+      "viral_k": 0.58,
+      "ltv": 1533.06,
+      "cac": 77.38,
+      "ltv_cac_ratio": 19.81,
+      "payback_months": 1.63,
+      "gross_margin": 0.76,
+      "burn_rate": 8598.03,
+      "runway_months": 266.2,
+      "arpu": 62.94,
+      "monthly_churn_rate": 0.0411,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 538,
+          "mrr": 6456.0
+        },
+        "pro": {
+          "customers": 362,
+          "mrr": 10498.0
+        },
+        "business": {
+          "customers": 135,
+          "mrr": 10665.0
+        }
+      }
+    },
+    {
+      "month": "2026-01",
+      "mrr": 70554.69,
+      "arr": 846656.25,
+      "new_mrr": 6980.55,
+      "expansion_mrr": 550.0,
+      "contraction_mrr": 102.0,
+      "churned_mrr": 2013.99,
+      "nrr": 97.6,
+      "total_customers": 1117,
+      "new_customers": 114,
+      "churned_customers": 32,
+      "trial_starts": 445,
+      "trial_conversions": 88,
+      "trial_conversion_rate": 0.1982,
+      "mau": 3697,
+      "dau": 1707,
+      "stickiness": 0.462,
+      "viral_k": 0.555,
+      "ltv": 2032.54,
+      "cac": 80.26,
+      "ltv_cac_ratio": 25.33,
+      "payback_months": 1.65,
+      "gross_margin": 0.77,
+      "burn_rate": 8328.7,
+      "runway_months": 273.8,
+      "arpu": 63.16,
+      "monthly_churn_rate": 0.0311,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 580,
+          "mrr": 6960.0
+        },
+        "pro": {
+          "customers": 390,
+          "mrr": 11310.0
+        },
+        "business": {
+          "customers": 147,
+          "mrr": 11613.0
+        }
+      }
+    },
+    {
+      "month": "2026-02",
+      "mrr": 75330.15,
+      "arr": 903961.76,
+      "new_mrr": 6984.2,
+      "expansion_mrr": 500.0,
+      "contraction_mrr": 119.0,
+      "churned_mrr": 2589.74,
+      "nrr": 96.87,
+      "total_customers": 1188,
+      "new_customers": 112,
+      "churned_customers": 41,
+      "trial_starts": 399,
+      "trial_conversions": 85,
+      "trial_conversion_rate": 0.2134,
+      "mau": 4380,
+      "dau": 1989,
+      "stickiness": 0.454,
+      "viral_k": 0.532,
+      "ltv": 1780.97,
+      "cac": 80.09,
+      "ltv_cac_ratio": 22.24,
+      "payback_months": 1.65,
+      "gross_margin": 0.77,
+      "burn_rate": 9137.89,
+      "runway_months": 248.6,
+      "arpu": 63.41,
+      "monthly_churn_rate": 0.0356,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 617,
+          "mrr": 7404.0
+        },
+        "pro": {
+          "customers": 415,
+          "mrr": 12035.0
+        },
+        "business": {
+          "customers": 156,
+          "mrr": 12324.0
+        }
+      }
+    },
+    {
+      "month": "2026-03",
+      "mrr": 80223.35,
+      "arr": 962680.22,
+      "new_mrr": 6973.57,
+      "expansion_mrr": 575.0,
+      "contraction_mrr": 119.0,
+      "churned_mrr": 2536.37,
+      "nrr": 97.24,
+      "total_customers": 1259,
+      "new_customers": 111,
+      "churned_customers": 40,
+      "trial_starts": 468,
+      "trial_conversions": 101,
+      "trial_conversion_rate": 0.2178,
+      "mau": 4814,
+      "dau": 2129,
+      "stickiness": 0.442,
+      "viral_k": 0.583,
+      "ltv": 1865.67,
+      "cac": 62.2,
+      "ltv_cac_ratio": 30.0,
+      "payback_months": 1.26,
+      "gross_margin": 0.77,
+      "burn_rate": 9360.05,
+      "runway_months": 241.7,
+      "arpu": 63.72,
+      "monthly_churn_rate": 0.0342,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 654,
+          "mrr": 7848.0
+        },
+        "pro": {
+          "customers": 440,
+          "mrr": 12760.0
+        },
+        "business": {
+          "customers": 165,
+          "mrr": 13035.0
+        }
+      }
+    },
+    {
+      "month": "2026-04",
+      "mrr": 85876.39,
+      "arr": 1030516.69,
+      "new_mrr": 8222.59,
+      "expansion_mrr": 625.0,
+      "contraction_mrr": 136.0,
+      "churned_mrr": 3058.56,
+      "nrr": 96.8,
+      "total_customers": 1342,
+      "new_customers": 131,
+      "churned_customers": 48,
+      "trial_starts": 474,
+      "trial_conversions": 104,
+      "trial_conversion_rate": 0.2194,
+      "mau": 4963,
+      "dau": 2024,
+      "stickiness": 0.408,
+      "viral_k": 0.53,
+      "ltv": 1814.42,
+      "cac": 79.62,
+      "ltv_cac_ratio": 22.79,
+      "payback_months": 1.59,
+      "gross_margin": 0.78,
+      "burn_rate": 9306.04,
+      "runway_months": 242.1,
+      "arpu": 63.99,
+      "monthly_churn_rate": 0.0353,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 697,
+          "mrr": 8364.0
+        },
+        "pro": {
+          "customers": 469,
+          "mrr": 13601.0
+        },
+        "business": {
+          "customers": 176,
+          "mrr": 13904.0
+        }
+      }
+    },
+    {
+      "month": "2026-05",
+      "mrr": 90184.17,
+      "arr": 1082210.01,
+      "new_mrr": 7530.27,
+      "expansion_mrr": 625.0,
+      "contraction_mrr": 136.0,
+      "churned_mrr": 3711.5,
+      "nrr": 96.25,
+      "total_customers": 1401,
+      "new_customers": 117,
+      "churned_customers": 58,
+      "trial_starts": 491,
+      "trial_conversions": 103,
+      "trial_conversion_rate": 0.2102,
+      "mau": 5455,
+      "dau": 2522,
+      "stickiness": 0.462,
+      "viral_k": 0.602,
+      "ltv": 1612.1,
+      "cac": 66.32,
+      "ltv_cac_ratio": 24.31,
+      "payback_months": 1.35,
+      "gross_margin": 0.76,
+      "burn_rate": 11255.53,
+      "runway_months": 199.2,
+      "arpu": 64.37,
+      "monthly_churn_rate": 0.0399,
+      "plan_breakdown": {
+        "starter": {
+          "customers": 728,
+          "mrr": 8736.0
+        },
+        "pro": {
+          "customers": 490,
+          "mrr": 14210.0
+        },
+        "business": {
+          "customers": 183,
+          "mrr": 14457.0
+        }
+      }
+    }
+  ]
+}
