@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlowSync — Board Presentation Q2 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg:       #0D1117;
+    --card:     #161B22;
+    --border:   #30363D;
+    --text:     #E6EDF3;
+    --muted:    #8B949E;
+    --cyan:     #00D4FF;
+    --purple:   #A855F7;
+    --green:    #00FF94;
+    --amber:    #F59E0B;
+    --red:      #FF4757;
+    --indigo:   #6366F1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #060910;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+  }
+
+  /* ── DECK CONTAINER ── */
+  .deck {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ── SLIDE ── */
+  .slide {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg);
+    border-bottom: 3px solid #060910;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 80px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* Background mesh */
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 20%, rgba(0,212,255,0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(168,85,247,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* ── SLIDE NUMBERS ── */
+  .slide-num {
+    position: absolute;
+    bottom: 28px;
+    right: 40px;
+    font-size: 11px;
+    color: var(--border);
+    letter-spacing: 1px;
+  }
+
+  /* ── LOGO BAR ── */
+  .logo-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--cyan), var(--purple));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -1px;
+  }
+
+  .logo-name {
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .logo-tag {
+    font-size: 11px;
+    color: var(--muted);
+    margin-left: 2px;
+  }
+
+  /* ── SLIDE 1: COVER ── */
+  .cover {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .cover-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .cover-title {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+
+  .cover-title span {
+    background: linear-gradient(135deg, var(--cyan), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cover-sub {
+    font-size: 20px;
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 48px;
+    line-height: 1.6;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 40px;
+  }
+
+  .cover-meta-item {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .cover-meta-item strong {
+    display: block;
+    font-size: 15px;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  /* ── SLIDE TITLE AREA ── */
+  .slide-header {
+    margin-bottom: 40px;
+  }
+
+  .slide-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .slide-title {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  .slide-sub {
+    font-size: 16px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  /* ── KPI GRID ── */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  .kpi-row-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .kpi-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .kpi-box::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .kpi-box.c::after { background: linear-gradient(90deg, var(--cyan), #0EA5E9); }
+  .kpi-box.p::after { background: linear-gradient(90deg, var(--purple), #7C3AED); }
+  .kpi-box.g::after { background: linear-gradient(90deg, var(--green), #10B981); }
+  .kpi-box.a::after { background: linear-gradient(90deg, var(--amber), #EF4444); }
+  .kpi-box.i::after { background: linear-gradient(90deg, var(--indigo), var(--purple)); }
+
+  .kpi-box-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .kpi-box-value {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .kpi-box-delta {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  .kpi-box-delta.up   { color: var(--green); background: rgba(0,255,148,0.12); }
+  .kpi-box-delta.warn { color: var(--amber); background: rgba(245,158,11,0.12); }
+
+  .kpi-box-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* ── CHART AREA ── */
+  .chart-zone {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .chart-zone-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .chart-zone-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  /* ── BENCHMARK TABLE ── */
+  .bench-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .bench-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bench-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(48,54,61,0.5);
+    color: var(--text);
+  }
+
+  .bench-table tr:last-child td { border-bottom: none; }
+
+  .bench-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .bench-pill.exceed  { color: var(--green); background: rgba(0,255,148,0.12); }
+  .bench-pill.meet    { color: var(--cyan);  background: rgba(0,212,255,0.12); }
+  .bench-pill.below   { color: var(--amber); background: rgba(245,158,11,0.12); }
+
+  /* ── RISK TABLE ── */
+  .risk-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .risk-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 100px 1fr 120px;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .risk-sev {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .risk-sev.high { color: var(--amber); background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); }
+  .risk-sev.med  { color: var(--cyan); background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); }
+
+  .risk-text strong { display: block; font-size: 14px; margin-bottom: 4px; }
+  .risk-text span   { font-size: 12px; color: var(--muted); }
+
+  .risk-owner {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  /* ── ROADMAP ── */
+  .roadmap-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .roadmap-item {
+    display: grid;
+    grid-template-columns: 160px 1fr 100px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .roadmap-q {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--cyan);
+    letter-spacing: 1px;
+  }
+
+  .roadmap-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .roadmap-desc {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .roadmap-impact {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green);
+    text-align: right;
+  }
+
+  /* ── FOOTER LINE ── */
+  .footer-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--cyan), var(--purple), var(--green));
+  }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    body { background: #fff; }
+    .slide {
+      background: #fff !important;
+      min-height: 100vh;
+      border-bottom: none;
+      color: #111;
+      break-after: page;
+    }
+    .slide::before { display: none; }
+    .footer-line { display: none; }
+    .kpi-box { background: #f8f9fa !important; border-color: #dee2e6 !important; }
+    .chart-zone { background: #f8f9fa !important; border-color: #dee2e6 !important; }
+    .risk-item, .roadmap-item { background: #f8f9fa !important; border-color: #dee2e6 !important; }
+    .cover-title, .slide-title, .logo-name { -webkit-text-fill-color: initial; color: #111; }
+    .bench-table th, .bench-table td { color: #444; }
+    .kpi-box-value { color: #111; }
+    .slide-eyebrow, .cover-eyebrow { color: #0099CC; }
+  }
+
+  @page { margin: 0; size: A4 landscape; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- ══════════════════════════════════════ SLIDE 1: COVER ══ -->
+<div class="slide cover">
+  <div class="logo-bar" style="margin-bottom:60px;">
+    <div class="logo-icon">FS</div>
+    <div>
+      <div class="logo-name">FlowSync</div>
+      <div class="logo-tag">B2C Productivity Platform</div>
+    </div>
+  </div>
+
+  <div class="cover-eyebrow">Board of Directors · Quarterly Business Review</div>
+  <div class="cover-title">Q2 2026<br><span>Business Review</span></div>
+  <div class="cover-sub">24-month performance summary, unit economics analysis, growth outlook and strategic priorities for H2 2026.</div>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <strong>Presented</strong>
+      June 1, 2026
+    </div>
+    <div class="cover-meta-item">
+      <strong>Period Covered</strong>
+      Jun 2024 – May 2026
+    </div>
+    <div class="cover-meta-item">
+      <strong>Prepared by</strong>
+      CEO / Analytics Team
+    </div>
+    <div class="cover-meta-item">
+      <strong>Classification</strong>
+      Confidential · Board Only
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+  <div class="slide-num">1 / 10</div>
+</div>
+
+<!-- ══════════════════════════════════════ SLIDE 2: HIGHLIGHTS ══ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-eyebrow">Performance Highlights</div>
+    <div class="slide-title">3 Headline Numbers</div>
+    <div class="slide-sub">Key achievements of the 24-month operating period</div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi-box c">
+      <div class="kpi-box-label">MRR (May 2026)</div>
+      <div class="kpi-box-value" style="color:var(--cyan)">$90.2K</div>
+      <span class="kpi-box-delta up">▲ +361% since launch</span>
+      <div class="kpi-box-note">ARR run rate: $1.08M · 7-figure milestone ✓</div>
+    </div>
+    <div class="kpi-box g">
+      <div class="kpi-box-label">LTV : CAC Ratio</div>
+      <div class="kpi-box-value" style="color:var(--green)">24.3×</div>
+      <span class="kpi-box-delta up">▲ World-class (&gt;5× = excellent)</span>
+      <div class="kpi-box-note">Best-in-class unit economics from day one</div>
+    </div>
+    <div class="kpi-box p">
+      <div class="kpi-box-label">Total Customers</div>
+      <div class="kpi-box-value" style="color:var(--purple)">1,401</div>
+      <span class="kpi-box-delta up">▲ +249% growth (402 → 1,401)</span>
+      <div class="kpi-box-note">Organic + viral + trial conversion flywheel</div>
+    </div>
+  </div>
+
+  <div class="kpi-row kpi-row-4">
+    <div class="kpi-box c">
+      <div class="kpi-box-label">Gross Margin</div>
+      <div class="kpi-box-value" style="font-size:28px;color:var(--cyan)">76%</div>
+      <span class="kpi-box-delta up">▲ +11pp from 65%</span>
+      <div class="kpi-box-note">Target: &gt;70% ✓</div>
+    </div>
+    <div class="kpi-box p">
+      <div class="kpi-box-label">Stickiness (DAU/MAU)</div>
+      <div class="kpi-box-value" style="font-size:28px;color:var(--purple)">46%</div>
+      <span class="kpi-box-delta up">▲ Exceeds 40% target</span>
+      <div class="kpi-box-note">High daily habit formation</div>
+    </div>
+    <div class="kpi-box a">
+      <div class="kpi-box-label">Monthly Churn</div>
+      <div class="kpi-box-value" style="font-size:28px;color:var(--amber)">3.99%</div>
+      <span class="kpi-box-delta warn">▼ Improved from 5.76%</span>
+      <div class="kpi-box-note">Still above 3% target — focus area</div>
+    </div>
+    <div class="kpi-box g">
+      <div class="kpi-box-label">Payback Period</div>
+      <div class="kpi-box-value" style="font-size:28px;color:var(--green)">1.4 mo</div>
+      <span class="kpi-box-delta up">▲ Down from 2.1 months</span>
+      <div class="kpi-box-note">Target: &lt;12 months ✓✓✓</div>
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+  <div class="slide-num">2 / 10</div>
+</div>
+
+<!-- ══════════════════════════════════════ SLIDE 3: REVENUE DEEP DIVE ══ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-eyebrow">Revenue</div>
+    <div class="slide-title">Revenue Deep-Dive</div>
+    <div class="slide-sub">MRR trajectory and revenue component waterfall · Jun 2024 – May 2026</div>
+  </div>
+
+  <div class="two-col">
+    <div class="chart-zone">
+      <div class="chart-zone-title">MRR Growth Trajectory</div>
+      <div class="chart-zone-sub">Monthly Recurring Revenue ($)</div>
+      <div style="height:260px;position:relative;">
+        <canvas id="s3-mrr"></canvas>
+      </div>
+    </div>
+    <div class="chart-zone">
+      <div class="chart-zone-title">MRR Component Waterfall</div>
+      <div class="chart-zone-sub">New + Expansion − Contraction − Churn</div>
+      <div style="height:260px;position:relative;">
+        <canvas id="s3-waterfall"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-row kpi-row-4">
+    <div class="kpi-box c">
+      <div class="kpi-box-label">Avg New MRR/mo</div>
+      <div class="kpi-box-value" style="font-size:24px;color:var(--cyan)">$4.5K</div>
+      <div class="kpi-box-note">+$7.5K peak in Apr 2026</div>
+    </div>
+    <div class="kpi-box g">
+      <div class="kpi-box-label">Avg Expansion MRR</div>
+      <div class="kpi-box-value" style="font-size:24px;color:var(--green)">$358</div>
+      <div class="kpi-box-note">Growing with Business tier mix</div>
+    </div>
+    <div class="kpi-box a">
+      <div class="kpi-box-label">Avg Churned MRR</div>
+      <div class="kpi-box-value" style="font-size:24px;color:var(--amber)">$1.9K</div>
+      <div class="kpi-box-note">Increasing — retention priority</div>
+    </div>
+    <div class="kpi-box p">
+      <div class="kpi-box-label">ARR Run Rate</div>
+      <div class="kpi-box-value" style="font-size:24px;color:var(--purple)">$1.08M</div>
+      <div class="kpi-box-note">Crossed $1M in Feb 2026 ✓</div>
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+  <div class="slide-num">3 / 10</div>
+</div>
+
+<!-- ══════════════════════════════════════ SLIDE 4: CUSTOMERS ══ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-eyebrow">Customer Metrics</div>
+    <div class="slide-title">Acquisition & Retention</div>
+    <div class="slide-sub">Customer growth, churn improvement, trial conversion flywheel</div>
+  </div>
+
+  <div class="two-col">
+    <div class="chart-zone">
+      <div class="chart-zone-title">Customer Growth</div>
+      <div class="chart-zone-sub">Total active paying subscribers</div>
+      <div style="height:240px;position:relative;">
+        <canvas id="s4-cust"></canvas>
+      </div>
+    </div>
+    <div class="chart-zone">
+      <div class="chart-zone-title">Monthly Churn Rate</div>
+      <div class="chart-zone-sub">Revenue churn % · 3% target (dashed)</div>
+      <div style="height:240px;position:relative;">
+        <canvas id="s4-churn"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-row kpi-row-4">
+    <div class="kpi-box p">
+      <div class="kpi-box-label">Trial Conversion</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--purple)">21%</div>
+      <span class="kpi-box-delta up">▲ Up from 14.7%</span>
+    </div>
+    <div class="kpi-box c">
+      <div class="kpi-box-label">Trial Starts/mo</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--cyan)">491</div>
+      <span class="kpi-box-delta up">▲ 10× launch volume</span>
+    </div>
+    <div class="kpi-box a">
+      <div class="kpi-box-label">Churn Improvement</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--amber)">−1.77pp</div>
+      <span class="kpi-box-delta up">▲ 5.76% → 3.99%</span>
+    </div>
+    <div class="kpi-box g">
+      <div class="kpi-box-label">Net Adds (May)</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--green)">+59</div>
+      <span class="kpi-box-delta up">▲ 117 new − 58 churned</span>
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+  <div class="slide-num">4 / 10</div>
+</div>
+
+<!-- ══════════════════════════════════════ SLIDE 5: ENGAGEMENT ══ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-eyebrow">Product Engagement</div>
+    <div class="slide-title">Stickiness & Virality</div>
+    <div class="slide-sub">DAU/MAU ratio, viral K-factor, user growth trajectory</div>
+  </div>
+
+  <div class="two-col">
+    <div class="chart-zone">
+      <div class="chart-zone-title">MAU & DAU Growth</div>
+      <div class="chart-zone-sub">Monthly and daily active users</div>
+      <div style="height:260px;position:relative;">
+        <canvas id="s5-mau"></canvas>
+      </div>
+    </div>
+    <div class="chart-zone">
+      <div class="chart-zone-title">Stickiness & Viral K-Factor</div>
+      <div class="chart-zone-sub">DAU/MAU % (left) · Viral K (right)</div>
+      <div style="height:260px;position:relative;">
+        <canvas id="s5-stick"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-row kpi-row-4">
+    <div class="kpi-box i">
+      <div class="kpi-box-label">MAU (May 2026)</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--indigo)">5,455</div>
+      <span class="kpi-box-delta up">▲ +3.6× from launch</span>
+    </div>
+    <div class="kpi-box c">
+      <div class="kpi-box-label">DAU (May 2026)</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--cyan)">2,522</div>
+      <span class="kpi-box-delta up">▲ +4.3× from launch</span>
+    </div>
+    <div class="kpi-box p">
+      <div class="kpi-box-label">Stickiness</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--purple)">46%</div>
+      <span class="kpi-box-delta up">▲ World-class (&gt;40%)</span>
+    </div>
+    <div class="kpi-box g">
+      <div class="kpi-box-label">Viral K-Factor</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--green)">0.60</div>
+      <span class="kpi-box-delta up">▲ Strong (&gt;0.5 = viral)</span>
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+  <div class="slide-num">5 / 10</div>
+</div>
+
+<!-- ══════════════════════════════════════ SLIDE 6: UNIT ECONOMICS ══ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-eyebrow">Unit Economics</div>
+    <div class="slide-title">LTV, CAC & Payback</div>
+    <div class="slide-sub">Exceptionally healthy unit economics — well above Series B benchmarks</div>
+  </div>
+
+  <div class="two-col">
+    <div class="chart-zone">
+      <div class="chart-zone-title">LTV : CAC Ratio Trend</div>
+      <div class="chart-zone-sub">5× = excellent (green dashed) · 3× = minimum (red dashed)</div>
+      <div style="height:260px;position:relative;">
+        <canvas id="s6-ltvcac"></canvas>
+      </div>
+    </div>
+    <div class="chart-zone">
+      <div class="chart-zone-title">CAC Payback Period</div>
+      <div class="chart-zone-sub">Months to recover customer acquisition cost</div>
+      <div style="height:260px;position:relative;">
+        <canvas id="s6-payback"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-row kpi-row-4">
+    <div class="kpi-box g">
+      <div class="kpi-box-label">LTV (May 2026)</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--green)">$1,612</div>
+      <span class="kpi-box-delta up">▲ +91% from launch</span>
+    </div>
+    <div class="kpi-box a">
+      <div class="kpi-box-label">CAC (May 2026)</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--amber)">$66</div>
+      <span class="kpi-box-delta up">▲ Efficient, stable</span>
+    </div>
+    <div class="kpi-box c">
+      <div class="kpi-box-label">LTV:CAC</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--cyan)">24.3×</div>
+      <span class="kpi-box-delta up">▲ 12.6× → 24.3× trend</span>
+    </div>
+    <div class="kpi-box p">
+      <div class="kpi-box-label">Payback Period</div>
+      <div class="kpi-box-value" style="font-size:26px;color:var(--purple)">1.4 mo</div>
+      <span class="kpi-box-delta up">▲ Exceptional (target &lt;12)</span>
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+  <div class="slide-num">6 / 10</div>
+</div>
+
+<!-- ══════════════════════════════════════ SLIDE 7: BENCHMARKS ══ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-eyebrow">Competitive Context</div>
+    <div class="slide-title">Benchmark Comparison</div>
+    <div class="slide-sub">FlowSync vs. B2C SaaS benchmarks — Series A stage (OpenView, Bessemer, SaaStr)</div>
+  </div>
+
+  <table class="bench-table">
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Series A Benchmark</th>
+        <th>Series B Benchmark</th>
+        <th>FlowSync (May 2026)</th>
+        <th>vs. Series B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Monthly Churn Rate</td>
+        <td>&lt;5%</td>
+        <td>&lt;3%</td>
+        <td>3.99%</td>
+        <td><span class="bench-pill meet">Meets A · Near B</span></td>
+      </tr>
+      <tr>
+        <td>Net Revenue Retention (NRR)</td>
+        <td>&gt;100%</td>
+        <td>&gt;110%</td>
+        <td>96.3%</td>
+        <td><span class="bench-pill below">Below — Expansion Gap</span></td>
+      </tr>
+      <tr>
+        <td>LTV : CAC Ratio</td>
+        <td>&gt;3×</td>
+        <td>&gt;5×</td>
+        <td>24.3×</td>
+        <td><span class="bench-pill exceed">Far Exceeds Series B+</span></td>
+      </tr>
+      <tr>
+        <td>CAC Payback Period</td>
+        <td>&lt;18 months</td>
+        <td>&lt;12 months</td>
+        <td>1.4 months</td>
+        <td><span class="bench-pill exceed">Exceptional (&gt;8× better)</span></td>
+      </tr>
+      <tr>
+        <td>DAU / MAU Stickiness</td>
+        <td>&gt;30%</td>
+        <td>&gt;40%</td>
+        <td>46.2%</td>
+        <td><span class="bench-pill exceed">Exceeds Series B</span></td>
+      </tr>
+      <tr>
+        <td>Trial Conversion Rate</td>
+        <td>&gt;15%</td>
+        <td>&gt;20%</td>
+        <td>21.0%</td>
+        <td><span class="bench-pill exceed">Meets Series B</span></td>
+      </tr>
+      <tr>
+        <td>Gross Margin</td>
+        <td>&gt;65%</td>
+        <td>&gt;70%</td>
+        <td>76.0%</td>
+        <td><span class="bench-pill exceed">Exceeds Series B</span></td>
+      </tr>
+      <tr>
+        <td>MoM MRR Growth</td>
+        <td>&gt;10%</td>
+        <td>&gt;5%</td>
+        <td>5.0%</td>
+        <td><span class="bench-pill meet">Meets Series B · Moderating</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:20px;font-size:12px;color:var(--muted);">
+    Sources: OpenView 2025 SaaS Benchmarks · Bessemer State of the Cloud 2025 · SaaStr Annual Survey 2025
+  </div>
+
+  <div class="footer-line"></div>
+  <div class="slide-num">7 / 10</div>
+</div>
+
+<!-- ══════════════════════════════════════ SLIDE 8: RISKS ══ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-eyebrow">Risk & Watchlist</div>
+    <div class="slide-title">Metrics to Watch</div>
+    <div class="slide-sub">Areas where performance is trending wrong or below target — with proposed actions</div>
+  </div>
+
+  <div class="risk-list">
+    <div class="risk-item">
+      <div><span class="risk-sev high">HIGH</span></div>
+      <div class="risk-text">
+        <strong>NRR Below 100% — Expansion Revenue Gap</strong>
+        <span>Current NRR of 96.3% means we lose $3.70 for every $100 in existing MRR annually without new customers. Root cause: low upgrade rate from Starter → Pro. Expansion MRR is only $625/mo on $90K MRR base.</span>
+      </div>
+      <div class="risk-owner">Owner: Product + CS<br><strong style="color:var(--cyan)">Q3 Priority</strong></div>
+    </div>
+
+    <div class="risk-item">
+      <div><span class="risk-sev high">HIGH</span></div>
+      <div class="risk-text">
+        <strong>Churn Rate Above 3% Target</strong>
+        <span>Monthly churn at 3.99% — improved from 5.76% but still 1pp above target. Cohort analysis shows months 3–6 post-acquisition as highest-risk window. Day-30 engagement drop correlates with churn.</span>
+      </div>
+      <div class="risk-owner">Owner: CS + Onboarding<br><strong style="color:var(--cyan)">Active Initiative</strong></div>
+    </div>
+
+    <div class="risk-item">
+      <div><span class="risk-sev med">MEDIUM</span></div>
+      <div class="risk-text">
+        <strong>MoM Growth Rate Deceleration</strong>
+        <span>MoM growth moderated from 18% (early) to 5% (May 2026). Expected at scale, but requires new growth channels (paid, partnerships, enterprise) to sustain ARR targets through 2027.</span>
+      </div>
+      <div class="risk-owner">Owner: Growth + Marketing<br><strong style="color:var(--cyan)">2026 Planning</strong></div>
+    </div>
+
+    <div class="risk-item">
+      <div><span class="risk-sev med">MEDIUM</span></div>
+      <div class="risk-text">
+        <strong>Viral K-Factor Plateauing</strong>
+        <span>Viral coefficient stabilizing at 0.60 (sub-viral threshold is 1.0). While healthy, the referral flywheel is not self-sustaining. Need to improve invite conversion and referral incentive programs.</span>
+      </div>
+      <div class="risk-owner">Owner: Product<br><strong style="color:var(--cyan)">Q3 Roadmap</strong></div>
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+  <div class="slide-num">8 / 10</div>
+</div>
+
+<!-- ══════════════════════════════════════ SLIDE 9: ROADMAP ══ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-eyebrow">Strategic Initiatives</div>
+    <div class="slide-title">H2 2026 Roadmap</div>
+    <div class="slide-sub">Top 5 growth levers tied to metrics improvement</div>
+  </div>
+
+  <div class="roadmap-items">
+    <div class="roadmap-item">
+      <div>
+        <div class="roadmap-q">Q3 2026</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px;">Jul – Sep</div>
+      </div>
+      <div>
+        <div class="roadmap-title">Expansion Revenue Program</div>
+        <div class="roadmap-desc">In-app upgrade prompts, feature-gating Starter plan, CSM outreach to 500+ Starter users. Target: push NRR from 96% to 103%+.</div>
+      </div>
+      <div class="roadmap-impact">NRR +7pp<br><span style="font-size:10px;color:var(--muted)">+$2K MRR/mo</span></div>
+    </div>
+
+    <div class="roadmap-item">
+      <div>
+        <div class="roadmap-q">Q3 2026</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px;">Aug launch</div>
+      </div>
+      <div>
+        <div class="roadmap-title">Smart Onboarding v2</div>
+        <div class="roadmap-desc">Personalized onboarding flows by use case. Reduce Day-30 drop-off (currently 44% activation). Target: push activation to 65%, reduce churn to 2.8%.</div>
+      </div>
+      <div class="roadmap-impact">Churn −1.2pp<br><span style="font-size:10px;color:var(--muted)">Saves ~$1.1K/mo</span></div>
+    </div>
+
+    <div class="roadmap-item">
+      <div>
+        <div class="roadmap-q">Q4 2026</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px;">Oct – Dec</div>
+      </div>
+      <div>
+        <div class="roadmap-title">Referral & Viral Loop Relaunch</div>
+        <div class="roadmap-desc">Redesign invite mechanism with recipient incentives, social proof triggers. Push viral K from 0.60 toward 0.80+.</div>
+      </div>
+      <div class="roadmap-impact">Viral K +0.2<br><span style="font-size:10px;color:var(--muted)">+30% organic acq</span></div>
+    </div>
+
+    <div class="roadmap-item">
+      <div>
+        <div class="roadmap-q">Q4 2026</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px;">Nov launch</div>
+      </div>
+      <div>
+        <div class="roadmap-title">Team & Collaboration Features</div>
+        <div class="roadmap-desc">Business plan expansion: real-time collaboration, shared workspaces, team admin. Drive Business tier mix from 13% to 20% of revenue.</div>
+      </div>
+      <div class="roadmap-impact">ARPU +$8<br><span style="font-size:10px;color:var(--muted)">NRR 110%+ unlock</span></div>
+    </div>
+
+    <div class="roadmap-item">
+      <div>
+        <div class="roadmap-q">Q4 2026</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px;">Ongoing</div>
+      </div>
+      <div>
+        <div class="roadmap-title">Paid Acquisition Channel Testing</div>
+        <div class="roadmap-desc">Test Meta, TikTok, and influencer channels. CAC currently $66 via organic — target $90–110 CAC with paid at 3× LTV:CAC minimum threshold.</div>
+      </div>
+      <div class="roadmap-impact">+200 new/mo<br><span style="font-size:10px;color:var(--muted)">$20K+ new MRR</span></div>
+    </div>
+  </div>
+
+  <div class="footer-line"></div>
+  <div class="slide-num">9 / 10</div>
+</div>
+
+<!-- ══════════════════════════════════════ SLIDE 10: APPENDIX ══ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-eyebrow">Appendix</div>
+    <div class="slide-title">Full Data Summary</div>
+    <div class="slide-sub">24-month key metrics table — Jun 2024 to May 2026</div>
+  </div>
+
+  <table class="bench-table" style="font-size:12px;">
+    <thead>
+      <tr>
+        <th>Period</th>
+        <th>MRR ($K)</th>
+        <th>Customers</th>
+        <th>Churn %</th>
+        <th>NRR %</th>
+        <th>MAU</th>
+        <th>Stickiness</th>
+        <th>LTV:CAC</th>
+        <th>Payback (mo)</th>
+      </tr>
+    </thead>
+    <tbody id="appendixTable"></tbody>
+  </table>
+
+  <div style="margin-top:20px;font-size:11px;color:var(--muted);">
+    All data is synthetic, generated for demonstration purposes only (seed=42). No real user data is present.
+    See <code style="color:var(--cyan)">data/synthetic_data.json</code> for the full 24-month dataset.
+    <br><br>
+    <strong style="color:var(--text)">To export as PDF:</strong> File → Print → Save as PDF (use A4 Landscape, Background Graphics ON)
+  </div>
+
+  <div class="footer-line"></div>
+  <div class="slide-num">10 / 10</div>
+</div>
+
+</div>
+
+<script>
+const LABELS = ["2024-06","2024-07","2024-08","2024-09","2024-10","2024-11","2024-12","2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05"];
+const MRR = [19569.52,20752.31,21909.68,23160.02,24975.16,26638.65,28779.64,30381.23,31730.58,33729.13,36942.91,39002.94,41509.01,43529.62,46965.14,51216.34,55771.52,60421.63,65140.13,70554.69,75330.15,80223.35,85876.39,90184.17];
+const NEW_MRR = [724.81,728.28,1158.45,1699.89,2732.99,2030.61,3280.5,2463.15,2383.35,3380.0,4456.27,3548.62,4083.12,3419.61,4843.03,6059.19,6022.08,6196.19,6865.3,6980.55,6984.2,6973.57,8222.59,7530.27];
+const EXP_MRR = [175.0,150.0,150.0,175.0,200.0,225.0,250.0,225.0,225.0,250.0,275.0,275.0,275.0,275.0,275.0,375.0,425.0,475.0,525.0,550.0,500.0,575.0,625.0,625.0];
+const CON_MRR = [-34.0,-34.0,-34.0,-34.0,-34.0,-34.0,-34.0,-51.0,-51.0,-51.0,-51.0,-51.0,-68.0,-68.0,-68.0,-68.0,-85.0,-85.0,-102.0,-102.0,-119.0,-119.0,-136.0,-136.0];
+const CHURN_MRR = [-1122.57,-1022.29,-1103.29,-1053.88,-1083.84,-1088.37,-1355.51,-1421.22,-1208.0,-1580.45,-1466.48,-1712.59,-1784.05,-1606.0,-1614.51,-2114.99,-1806.9,-1936.08,-2569.8,-2013.99,-2589.74,-2536.37,-3058.56,-3711.5];
+const NRR = [94.69,95.37,95.24,95.83,96.04,96.41,95.72,95.67,96.6,95.65,96.32,95.97,95.96,96.63,96.77,96.15,97.14,97.23,96.45,97.6,96.87,97.24,96.8,96.25];
+const CUSTOMERS = [402,395,395,406,436,452,486,503,522,552,604,634,672,701,755,822,893,964,1035,1117,1188,1259,1342,1401];
+const CHURN_RATE = [5.76,5.26,5.47,4.63,4.74,4.59,4.85,4.53,4.17,4.55,4.0,4.23,4.19,4.2,3.94,4.16,3.74,3.63,4.11,3.11,3.56,3.42,3.53,3.99];
+const MAU = [1534,1578,1313,1738,1357,1607,1702,2026,1929,2106,2291,2546,2485,2248,2811,2643,3529,3870,3395,3697,4380,4814,4963,5455];
+const DAU = [585,632,490,669,506,640,720,832,772,893,952,1046,1077,918,1249,1150,1485,1672,1644,1707,1989,2129,2024,2522];
+const STICKINESS = [38.2,40.1,37.4,38.5,37.3,39.8,42.3,41.1,40.0,42.4,41.6,41.1,43.4,40.8,44.5,43.5,42.1,43.2,48.4,46.2,45.4,44.2,40.8,46.2];
+const VIRAL_K = [0.34,0.29,0.38,0.34,0.38,0.39,0.41,0.42,0.43,0.48,0.48,0.5,0.48,0.51,0.55,0.54,0.53,0.56,0.58,0.56,0.53,0.58,0.53,0.6];
+const LTV_CAC = [12.62,14.62,14.22,14.34,17.93,18.87,16.04,16.57,18.39,15.77,17.71,18.23,20.72,16.95,21.87,17.43,20.98,24.05,19.81,25.33,22.24,30.0,22.79,24.31];
+const PAYBACK = [2.12,1.97,1.89,2.24,1.69,1.62,1.8,1.88,1.83,1.97,1.94,1.72,1.58,1.89,1.55,1.85,1.71,1.49,1.63,1.65,1.65,1.26,1.59,1.35];
+
+const GRID = 'rgba(48,54,61,0.5)';
+
+Chart.defaults.color = '#8B949E';
+Chart.defaults.font.family = 'Inter, sans-serif';
+Chart.defaults.font.size = 10;
+
+function tt() {
+  return { backgroundColor:'#1C2128', borderColor:'#30363D', borderWidth:1, titleColor:'#E6EDF3', bodyColor:'#8B949E', padding:10, cornerRadius:8 };
+}
+
+// S3 MRR
+const s3m = document.getElementById('s3-mrr').getContext('2d');
+const g1 = s3m.createLinearGradient(0,0,0,280); g1.addColorStop(0,'rgba(0,212,255,0.4)'); g1.addColorStop(1,'rgba(0,212,255,0.02)');
+new Chart(s3m, { type:'line', data:{ labels:LABELS, datasets:[{ data:MRR, borderColor:'#00D4FF', backgroundColor:g1, borderWidth:2, fill:true, tension:0.4, pointRadius:2 }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false}, tooltip:{...tt(), callbacks:{label:c=>`$${(c.parsed.y/1000).toFixed(1)}K`}} }, scales:{ x:{grid:{color:GRID},ticks:{color:'#8B949E',maxRotation:45}}, y:{grid:{color:GRID},ticks:{color:'#8B949E',callback:v=>'$'+(v/1000).toFixed(0)+'K'}} } } });
+
+// S3 Waterfall
+new Chart(document.getElementById('s3-waterfall').getContext('2d'), { type:'bar', data:{ labels:LABELS, datasets:[{label:'New',data:NEW_MRR,backgroundColor:'rgba(0,255,148,0.7)',borderWidth:0},{label:'Expansion',data:EXP_MRR,backgroundColor:'rgba(0,212,255,0.7)',borderWidth:0},{label:'Contraction',data:CON_MRR,backgroundColor:'rgba(245,158,11,0.7)',borderWidth:0},{label:'Churned',data:CHURN_MRR,backgroundColor:'rgba(255,71,87,0.7)',borderWidth:0}] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{position:'top',labels:{color:'#8B949E',usePointStyle:true,font:{size:9}}}, tooltip:{...tt()} }, scales:{ x:{grid:{color:GRID},ticks:{color:'#8B949E',maxRotation:45}}, y:{grid:{color:GRID},ticks:{color:'#8B949E',callback:v=>'$'+(v/1000).toFixed(1)+'K'}} } } });
+
+// S4 Customers
+const s4g = document.getElementById('s4-cust').getContext('2d');
+const g2 = s4g.createLinearGradient(0,0,0,260); g2.addColorStop(0,'rgba(168,85,247,0.35)'); g2.addColorStop(1,'rgba(168,85,247,0.02)');
+new Chart(s4g, { type:'line', data:{ labels:LABELS, datasets:[{ data:CUSTOMERS, borderColor:'#A855F7', backgroundColor:g2, borderWidth:2, fill:true, tension:0.4, pointRadius:2 }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false},tooltip:{...tt()}}, scales:{ x:{grid:{color:GRID},ticks:{color:'#8B949E',maxRotation:45}}, y:{grid:{color:GRID},ticks:{color:'#8B949E'}} } } });
+
+// S4 Churn
+new Chart(document.getElementById('s4-churn').getContext('2d'), { type:'line', data:{ labels:LABELS, datasets:[{data:CHURN_RATE,borderColor:'#FF4757',backgroundColor:'rgba(255,71,87,0.15)',borderWidth:2,fill:true,tension:0.4,pointRadius:2},{label:'Target 3%',data:Array(24).fill(3),borderColor:'rgba(0,255,148,0.5)',borderWidth:1.5,borderDash:[5,3],fill:false,pointRadius:0}] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false},tooltip:{...tt(),callbacks:{label:c=>`${c.parsed.y}%`}}}, scales:{ x:{grid:{color:GRID},ticks:{color:'#8B949E',maxRotation:45}}, y:{grid:{color:GRID},ticks:{color:'#8B949E',callback:v=>v+'%'},min:0,max:8} } } });
+
+// S5 MAU/DAU
+const s5 = document.getElementById('s5-mau').getContext('2d');
+const g3 = s5.createLinearGradient(0,0,0,280); g3.addColorStop(0,'rgba(99,102,241,0.3)'); g3.addColorStop(1,'rgba(99,102,241,0.02)');
+new Chart(s5, { type:'line', data:{ labels:LABELS, datasets:[{label:'MAU',data:MAU,borderColor:'#6366F1',backgroundColor:g3,borderWidth:2,fill:true,tension:0.4,pointRadius:2},{label:'DAU',data:DAU,borderColor:'#00D4FF',backgroundColor:'transparent',borderWidth:2,fill:false,tension:0.4,pointRadius:2}] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'top',labels:{color:'#8B949E',usePointStyle:true,font:{size:9}}},tooltip:{...tt()}}, scales:{ x:{grid:{color:GRID},ticks:{color:'#8B949E',maxRotation:45}}, y:{grid:{color:GRID},ticks:{color:'#8B949E',callback:v=>v.toLocaleString()}} } } });
+
+// S5 Stickiness/Viral
+new Chart(document.getElementById('s5-stick').getContext('2d'), { type:'line', data:{ labels:LABELS, datasets:[{label:'Stickiness %',data:STICKINESS,borderColor:'#A855F7',borderWidth:2,tension:0.4,pointRadius:2,yAxisID:'y'},{label:'Viral K',data:VIRAL_K,borderColor:'#00D4FF',borderWidth:2,tension:0.4,pointRadius:2,yAxisID:'y2',borderDash:[4,3]}] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'top',labels:{color:'#8B949E',usePointStyle:true,font:{size:9}}},tooltip:{...tt()}}, scales:{ x:{grid:{color:GRID},ticks:{color:'#8B949E',maxRotation:45}}, y:{grid:{color:GRID},ticks:{color:'#8B949E',callback:v=>v+'%'},title:{display:true,text:'Stickiness %',color:'#8B949E',font:{size:9}}}, y2:{position:'right',grid:{display:false},ticks:{color:'#8B949E'},title:{display:true,text:'Viral K',color:'#8B949E',font:{size:9}},min:0,max:1} } } });
+
+// S6 LTV:CAC
+new Chart(document.getElementById('s6-ltvcac').getContext('2d'), { type:'bar', data:{ labels:LABELS, datasets:[{label:'LTV:CAC',data:LTV_CAC,backgroundColor:LTV_CAC.map(v=>v>=5?'rgba(0,255,148,0.8)':'rgba(0,212,255,0.7)'),borderWidth:0,borderRadius:2},{label:'5× Target',data:Array(24).fill(5),type:'line',borderColor:'rgba(0,255,148,0.5)',borderWidth:1.5,borderDash:[5,3],fill:false,pointRadius:0},{label:'3× Min',data:Array(24).fill(3),type:'line',borderColor:'rgba(255,71,87,0.5)',borderWidth:1.5,borderDash:[5,3],fill:false,pointRadius:0}] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'top',labels:{color:'#8B949E',usePointStyle:true,font:{size:9}}},tooltip:{...tt(),callbacks:{label:c=>`${c.parsed.y.toFixed(1)}×`}}}, scales:{ x:{grid:{color:GRID},ticks:{color:'#8B949E',maxRotation:45}}, y:{grid:{color:GRID},ticks:{color:'#8B949E',callback:v=>v+'×'},min:0,max:35} } } });
+
+// S6 Payback
+const s6p = document.getElementById('s6-payback').getContext('2d');
+const g4 = s6p.createLinearGradient(0,0,0,280); g4.addColorStop(0,'rgba(168,85,247,0.3)'); g4.addColorStop(1,'rgba(168,85,247,0.02)');
+new Chart(s6p, { type:'line', data:{ labels:LABELS, datasets:[{label:'Payback (months)',data:PAYBACK,borderColor:'#A855F7',backgroundColor:g4,borderWidth:2,fill:true,tension:0.4,pointRadius:2},{label:'12mo Target',data:Array(24).fill(12),borderColor:'rgba(245,158,11,0.5)',borderWidth:1.5,borderDash:[5,3],fill:false,pointRadius:0}] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'top',labels:{color:'#8B949E',usePointStyle:true,font:{size:9}}},tooltip:{...tt(),callbacks:{label:c=>`${c.parsed.y} mo`}}}, scales:{ x:{grid:{color:GRID},ticks:{color:'#8B949E',maxRotation:45}}, y:{grid:{color:GRID},ticks:{color:'#8B949E',callback:v=>v+' mo'},min:0,max:15} } } });
+
+// Appendix table
+const months_data = [
+  {m:'2024-06',mrr:19.6,c:402,ch:5.76,nrr:94.7,mau:1534,st:38.2,lc:12.6,pb:2.12},
+  {m:'2024-09',mrr:23.2,c:406,ch:4.63,nrr:95.8,mau:1738,st:38.5,lc:14.3,pb:2.24},
+  {m:'2024-12',mrr:28.8,c:486,ch:4.85,nrr:95.7,mau:1702,st:42.3,lc:16.0,pb:1.80},
+  {m:'2025-03',mrr:33.7,c:552,ch:4.55,nrr:95.7,mau:2106,st:42.4,lc:15.8,pb:1.97},
+  {m:'2025-06',mrr:41.5,c:672,ch:4.19,nrr:96.0,mau:2485,st:43.4,lc:20.7,pb:1.58},
+  {m:'2025-09',mrr:51.2,c:822,ch:4.16,nrr:96.2,mau:2643,st:43.5,lc:17.4,pb:1.85},
+  {m:'2025-12',mrr:65.1,c:1035,ch:4.11,nrr:96.5,mau:3395,st:48.4,lc:19.8,pb:1.63},
+  {m:'2026-01',mrr:70.6,c:1117,ch:3.11,nrr:97.6,mau:3697,st:46.2,lc:25.3,pb:1.65},
+  {m:'2026-03',mrr:80.2,c:1259,ch:3.42,nrr:97.2,mau:4814,st:44.2,lc:30.0,pb:1.26},
+  {m:'2026-05',mrr:90.2,c:1401,ch:3.99,nrr:96.3,mau:5455,st:46.2,lc:24.3,pb:1.35},
+];
+const tbody = document.getElementById('appendixTable');
+months_data.forEach(r => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td>${r.m}</td><td>$${r.mrr}K</td><td>${r.c.toLocaleString()}</td><td>${r.ch}%</td><td>${r.nrr}%</td><td>${r.mau.toLocaleString()}</td><td>${r.st}%</td><td>${r.lc}×</td><td>${r.pb} mo</td>`;
+  tbody.appendChild(tr);
+});
+</script>
+</body>
+</html>
