@@ -118,3 +118,8 @@ This document maintains the audit trail for the FlowSync SaaS Metrics Agent — 
 ---
 
 *Last updated: 2026-06-01 | Owner: Kamil_K | Review cycle: Quarterly*
+| 006 | 2026-06-01 | DEPS | Kamil_K | Added forecaster.py module (stdlib only, no new deps) | No new dependencies |
+| 007 | 2026-06-01 | DEPS | Kamil_K | Added alerter.py module (stdlib only) | No new dependencies |
+| 008 | 2026-06-01 | DEPS | Kamil_K | Added reporter.py module (stdlib only) | No new dependencies |
+| 009 | 2026-06-01 | DEPS | Kamil_K | Added schema.py validation module | No new dependencies |
+| 010 | 2026-06-01 | DEPS | Kamil_K | Added config.py centralized config module | No new dependencies |
