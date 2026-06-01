@@ -1,0 +1,33 @@
+2026-06-01T20:22:42Z | INFO  | flowsync.agent           | FlowSync Metrics Agent starting
+2026-06-01T20:22:42Z | INFO  | flowsync.agent           | Config: seed=42, months=24, output=data/
+2026-06-01T20:22:42Z | INFO  | flowsync.agent           | Phase 1: Generating synthetic data
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2024-06: MRR=$19,570, Customers=402
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2024-07: MRR=$20,752, Customers=395
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2024-08: MRR=$21,910, Customers=395
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2024-09: MRR=$23,160, Customers=406
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2024-10: MRR=$24,975, Customers=436
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2024-11: MRR=$26,639, Customers=452
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2024-12: MRR=$28,780, Customers=486
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-01: MRR=$30,381, Customers=503
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-02: MRR=$31,731, Customers=522
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-03: MRR=$33,729, Customers=552
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-04: MRR=$36,943, Customers=604
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-05: MRR=$39,003, Customers=634
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-06: MRR=$41,509, Customers=672
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-07: MRR=$43,530, Customers=701
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-08: MRR=$46,965, Customers=755
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-09: MRR=$51,216, Customers=822
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-10: MRR=$55,772, Customers=893
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-11: MRR=$60,422, Customers=964
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2025-12: MRR=$65,140, Customers=1,035
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2026-01: MRR=$70,555, Customers=1,117
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2026-02: MRR=$75,330, Customers=1,188
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2026-03: MRR=$80,223, Customers=1,259
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2026-04: MRR=$85,876, Customers=1,342
+2026-06-01T20:22:42Z | DEBUG | flowsync.data_generator  | Generated 2026-05: MRR=$90,184, Customers=1,401
+2026-06-01T20:22:42Z | INFO  | flowsync.data_generator  | Saved 24 months to data/synthetic_data.json
+2026-06-01T20:22:42Z | INFO  | flowsync.agent           | Wrote 24 monthly snapshots to data/synthetic_data.json
+2026-06-01T20:22:42Z | INFO  | flowsync.agent           | Phase 2: Computing derived metrics
+2026-06-01T20:22:42Z | INFO  | flowsync.agent           | Summary: MRR $19,570 → $90,184 (+360.8%), Customers 402 → 1,401, Avg NRR 96.4%
+2026-06-01T20:22:42Z | INFO  | flowsync.agent           | Latest (2026-05): MRR=$90,184, Churn=4.0%, LTV:CAC=24.3×
+2026-06-01T20:22:43Z | INFO  | flowsync.agent           | FlowSync Metrics Agent completed in 0.31s
